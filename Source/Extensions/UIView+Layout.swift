@@ -184,6 +184,9 @@ extension UIView {
         layer.shadowRadius = radius
         layer.shadowOffset = offset
         layer.shadowColor = color.cgColor
+        
+        // Optimize performance for rendering shadow
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
     }
     
     convenience public init(backgroundColor: UIColor = .clear) {
